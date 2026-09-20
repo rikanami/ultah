@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Ulang Tahun ke-25 Galinasari 🎂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Pacifico=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
-            min-height: 100vh;
             background: linear-gradient(135deg, #1a0b2e, #2e1a47, #4a2b6b);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-family: 'Quicksand', sans-serif;
-            overflow: hidden;
             position: relative;
         }
 
@@ -27,12 +28,11 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Bintang & partikel */
+        /* ================= BINTANG & PARTIKEL ================= */
         .stars, .twinkling, .confetti {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
-            display: block;
             pointer-events: none;
             z-index: 1;
         }
@@ -66,7 +66,6 @@
         .confetti-piece {
             position: absolute;
             width: 12px; height: 12px;
-            background: #f2d74e;
             top: -20px;
             opacity: 0.8;
             animation: fall linear infinite;
@@ -78,201 +77,22 @@
             100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
         }
 
-        /* Kartu utama */
-        .card {
-            position: relative;
-            z-index: 10;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            border-radius: 40px;
-            padding: 2.5rem 2rem;
-            max-width: 650px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 0, 0.2) inset, 0 0 40px rgba(255, 200, 0, 0.3);
-            animation: cardAppear 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, floatCard 6s ease-in-out infinite 1.5s;
-            max-height: 95vh;
-            overflow-y: auto;
-        }
-
-        .card::-webkit-scrollbar { width: 6px; }
-        .card::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 10px; }
-        .card::-webkit-scrollbar-thumb { background: rgba(255,215,0,0.5); border-radius: 10px; }
-
-        @keyframes cardAppear {
-            0% { opacity: 0; transform: scale(0.3) rotate(-10deg); }
-            60% { opacity: 1; transform: scale(1.05) rotate(2deg); }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        @keyframes floatCard {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(0.5deg); }
-        }
-
-        /* Foto Galinasari */
-        .photo-frame {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 1rem;
-            border-radius: 50%;
-            padding: 5px;
-            background: linear-gradient(45deg, #FFD700, #FF69B4, #FFD700);
-            animation: photoSpin 6s linear infinite, photoPop 1s ease-out 0.5s both;
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
-            position: relative;
-        }
-
-        @keyframes photoSpin {
-            0% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 0 60px rgba(255, 105, 180, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(255, 105, 180, 0.7), 0 0 60px rgba(255, 215, 0, 0.5); }
-            100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 0 60px rgba(255, 105, 180, 0.5); }
-        }
-
-        @keyframes photoPop {
-            0% { opacity: 0; transform: scale(0); }
-            70% { transform: scale(1.1); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        .photo-frame img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            border: 3px solid #1a0b2e;
-            animation: photoFloat 4s ease-in-out infinite;
-        }
-
-        @keyframes photoFloat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-        }
-
-        .cake-icon {
-            font-size: 3.5rem;
-            line-height: 1;
-            margin-bottom: 0.3rem;
-            animation: bounceCake 2s ease-in-out infinite;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
-        }
-
-        @keyframes bounceCake {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-12px) scale(1.1); }
-        }
-
-        .title {
-            font-family: 'Pacifico', cursive;
-            font-size: 2.8rem;
-            color: #FFD966;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 40px rgba(255, 200, 0, 0.4), 3px 3px 0 #7a4b00;
-            letter-spacing: 2px;
-            margin-bottom: 0.3rem;
-            animation: glowTitle 2s ease-in-out infinite alternate, slideDown 1s ease-out 0.3s both;
-        }
-
-        @keyframes glowTitle {
-            from { text-shadow: 0 0 20px #FFD966, 0 0 40px #FFB347, 3px 3px 0 #7a4b00; }
-            to { text-shadow: 0 0 30px #FFE066, 0 0 70px #FFA500, 0 0 90px #FFD700, 3px 3px 0 #7a4b00; }
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-50px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .age {
-            font-size: 2.2rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #FFD700, #FFB347, #FF8C00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0.2rem 0 0.5rem 0;
-            animation: pulseAge 1.5s ease-in-out infinite alternate, slideDown 1s ease-out 0.6s both;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
-        }
-
-        @keyframes pulseAge {
-            from { transform: scale(1); }
-            to { transform: scale(1.05); }
-        }
-
-        .name {
-            font-family: 'Pacifico', cursive;
-            font-size: 3rem;
-            color: #fff;
-            text-shadow: 0 0 10px #FF69B4, 0 0 30px #FF1493, 0 0 50px #FF69B4;
-            margin: 0.3rem 0 0.8rem 0;
-            animation: slideDown 1s ease-out 0.9s both, nameGlow 2s infinite alternate;
-            letter-spacing: 2px;
-        }
-
-        @keyframes nameGlow {
-            from { text-shadow: 0 0 10px #FF69B4, 0 0 30px #FF1493, 0 0 50px #FF69B4; }
-            to { text-shadow: 0 0 20px #FFB6C1, 0 0 50px #FF69B4, 0 0 80px #FF1493; }
-        }
-
-        .message {
-            font-size: 1.05rem;
-            color: #f0e6ff;
-            line-height: 1.7;
-            margin: 1rem 0 1.5rem 0;
-            font-weight: 600;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
-            animation: slideDown 1s ease-out 1.2s both;
-            padding: 0 0.5rem;
-        }
-
-        .divider {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            margin: 0.8rem 0;
-            animation: slideDown 1s ease-out 1.5s both;
-        }
-
-        .divider .line {
-            height: 2px;
-            width: 60px;
-            background: linear-gradient(90deg, transparent, #FFD700, #FFB347, #FFD700, transparent);
-            border-radius: 2px;
-        }
-
-        .divider .heart {
-            font-size: 1.5rem;
-            animation: heartbeat 1.2s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            30% { transform: scale(1.3); }
-            50% { transform: scale(1.1); }
-            70% { transform: scale(1.25); }
-        }
-
+        /* ================= BALON ================= */
         .balloon-container {
             position: absolute;
             top: 0; left: 0;
             width: 100%; height: 100%;
             pointer-events: none;
-            z-index: 5;
+            z-index: 4;
             overflow: hidden;
         }
 
         .balloon {
             position: absolute;
-            width: 50px;
-            height: 65px;
             border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
             box-shadow: 0 10px 20px rgba(0,0,0,0.2), inset -5px -5px 15px rgba(0,0,0,0.2), inset 5px 5px 15px rgba(255,255,255,0.4);
             animation: floatBalloon 8s ease-in-out infinite;
-            opacity: 0.8;
+            opacity: 0.85;
         }
 
         .balloon::after {
@@ -290,18 +110,313 @@
             100% { transform: translateY(0) rotate(-5deg); }
         }
 
-        /* Tombol */
-        .button-group {
+        /* ================= HALAMAN PEMBUKA ================= */
+        .welcome-screen {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             display: flex;
-            gap: 10px;
+            flex-direction: column;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-            animation: slideDown 1s ease-out 1.8s both;
+            align-items: center;
+            text-align: center;
+            z-index: 100;
+            padding: 20px;
+            transition: opacity 1s ease, visibility 1s ease, transform 1s ease;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .welcome-screen.hide {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.5);
+            pointer-events: none;
+        }
+
+        .welcome-icon {
+            font-size: 6rem;
+            animation: giftBounce 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 40px gold);
+            margin-bottom: 1rem;
+        }
+
+        @keyframes giftBounce {
+            0%, 100% { transform: translateY(0) rotate(-5deg) scale(1); }
+            50% { transform: translateY(-20px) rotate(5deg) scale(1.1); }
+        }
+
+        .welcome-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 4rem;
+            color: #FFD966;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.9), 0 0 40px rgba(255, 200, 0, 0.6), 4px 4px 0 #7a4b00;
+            margin-bottom: 0.5rem;
+            animation: glowTitle 2s ease-in-out infinite alternate;
+            line-height: 1.2;
+        }
+
+        @keyframes glowTitle {
+            from { text-shadow: 0 0 20px #FFD966, 0 0 40px #FFB347, 4px 4px 0 #7a4b00; }
+            to { text-shadow: 0 0 30px #FFE066, 0 0 70px #FFA500, 0 0 90px #FFD700, 4px 4px 0 #7a4b00; }
+        }
+
+        .welcome-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 0 0 10px #FF69B4, 0 0 30px #FF1493, 0 0 60px #FF69B4;
+            margin-bottom: 2rem;
+            animation: nameGlow 2s infinite alternate;
+            line-height: 1.2;
+        }
+
+        @keyframes nameGlow {
+            from { text-shadow: 0 0 10px #FF69B4, 0 0 30px #FF1493, 0 0 60px #FF69B4; }
+            to { text-shadow: 0 0 20px #FFB6C1, 0 0 50px #FF69B4, 0 0 90px #FF1493; }
+        }
+
+        .welcome-hint {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 600;
+            padding: 15px 35px;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 105, 180, 0.2));
+            border: 2px solid rgba(255, 215, 0, 0.6);
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            animation: pulseHint 1.5s ease-in-out infinite alternate;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .welcome-hint:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.3), rgba(255, 105, 180, 0.3));
+        }
+
+        @keyframes pulseHint {
+            from { transform: scale(1); box-shadow: 0 0 30px rgba(255, 215, 0, 0.5); }
+            to { transform: scale(1.05); box-shadow: 0 0 50px rgba(255, 215, 0, 0.8); }
+        }
+
+        /* ================= HALAMAN DOA (setelah klik) ================= */
+        .main-screen {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.8);
+            transition: opacity 1s ease 0.3s, visibility 1s ease 0.3s, transform 1s ease 0.3s;
+        }
+
+        .main-screen.show {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+
+        .card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 40px;
+            padding: 2rem 2rem 2.5rem;
+            max-width: 620px;
+            width: 100%;
+            max-height: 95vh;
+            overflow-y: auto;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 0, 0.2) inset, 0 0 40px rgba(255, 200, 0, 0.3);
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        .card::-webkit-scrollbar { width: 6px; }
+        .card::-webkit-scrollbar-track { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .card::-webkit-scrollbar-thumb { background: rgba(255,215,0,0.5); border-radius: 10px; }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(0.3deg); }
+        }
+
+        .photo-frame {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #FFD700);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.7);
+            animation: photoSpin 6s linear infinite;
+            position: relative;
+        }
+
+        @keyframes photoSpin {
+            0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.7), 0 0 60px rgba(255, 105, 180, 0.5); }
+            50% { box-shadow: 0 0 30px rgba(255, 105, 180, 0.7), 0 0 60px rgba(255, 215, 0, 0.5); }
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 3px solid #1a0b2e;
+            animation: photoFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes photoFloat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.04); }
+        }
+
+        .cake-icon {
+            font-size: 3rem;
+            line-height: 1;
+            margin-bottom: 0.3rem;
+            animation: bounceCake 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.7));
+        }
+
+        @keyframes bounceCake {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+
+        .title {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.2rem;
+            color: #FFD966;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 3px 3px 0 #7a4b00;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+            animation: slideDown 0.8s ease-out both;
+        }
+
+        .age {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #FFD700, #FFB347, #FF8C00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0.2rem 0 0.3rem 0;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+        }
+
+        .name {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.4rem;
+            color: #fff;
+            text-shadow: 0 0 10px #FF69B4, 0 0 30px #FF1493;
+            margin: 0.2rem 0 0.6rem 0;
+            animation: nameGlow 2s infinite alternate;
+        }
+
+        .divider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 0.6rem 0;
+        }
+
+        .divider .line {
+            height: 2px;
+            width: 50px;
+            background: linear-gradient(90deg, transparent, #FFD700, #FFB347, #FFD700, transparent);
+            border-radius: 2px;
+        }
+
+        .divider .heart {
+            font-size: 1.3rem;
+            animation: heartbeat 1.2s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            30% { transform: scale(1.3); }
+            50% { transform: scale(1.1); }
+            70% { transform: scale(1.25); }
+        }
+
+        /* Doa-doa baik */
+        .prayers {
+            margin: 1rem 0;
+            text-align: left;
+            padding: 0 0.5rem;
+        }
+
+        .prayer-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            border-left: 3px solid #FFD700;
+            opacity: 0;
+            transform: translateX(-30px);
+            animation: slideInPrayer 0.6s ease-out forwards;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .prayer-item:nth-child(1) { animation-delay: 0.4s; }
+        .prayer-item:nth-child(2) { animation-delay: 0.6s; }
+        .prayer-item:nth-child(3) { animation-delay: 0.8s; }
+        .prayer-item:nth-child(4) { animation-delay: 1.0s; }
+        .prayer-item:nth-child(5) { animation-delay: 1.2s; }
+        .prayer-item:nth-child(6) { animation-delay: 1.4s; }
+
+        @keyframes slideInPrayer {
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .prayer-item .emoji {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+        }
+
+        .prayer-item .text {
+            font-size: 0.95rem;
+            color: #f0e6ff;
+            line-height: 1.5;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .closing {
+            font-size: 1rem;
+            color: #FFD966;
+            margin: 1.2rem 0 1rem;
+            font-weight: 700;
+            font-style: italic;
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+            animation: slideDown 1s ease-out 1.6s both;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .wish-btn {
-            padding: 12px 25px;
+            margin-top: 0.5rem;
+            padding: 12px 30px;
             font-size: 1rem;
             font-weight: 700;
             font-family: 'Quicksand', sans-serif;
@@ -335,144 +450,99 @@
             50% { box-shadow: 0 10px 30px rgba(255, 215, 0, 0.8), 0 0 0 4px rgba(255, 215, 0, 0.6) inset; }
         }
 
-        .music-btn {
-            background: linear-gradient(45deg, #9370DB, #FF69B4);
-            color: #fff;
-        }
-
-        .glow-ring {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 110%; height: 110%;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 215, 0, 0.3);
-            animation: ringRotate 20s linear infinite;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        @keyframes ringRotate {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        /* Overlay "tap to start" untuk autoplay */
-        .tap-overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(26, 11, 46, 0.85);
-            backdrop-filter: blur(8px);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            cursor: pointer;
-            transition: opacity 0.5s ease, visibility 0.5s ease;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .tap-overlay.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .tap-overlay .gift-icon {
-            font-size: 6rem;
-            animation: bounceCake 1.5s ease-in-out infinite;
-            filter: drop-shadow(0 0 30px gold);
-            margin-bottom: 1rem;
-        }
-
-        .tap-overlay h2 {
-            font-family: 'Pacifico', cursive;
-            color: #FFD966;
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
-        }
-
-        .tap-overlay p {
-            color: #fff;
-            font-size: 1.1rem;
-            font-weight: 600;
-            animation: pulseAge 1.5s ease-in-out infinite alternate;
-        }
-
+        /* Responsif */
         @media (max-width: 600px) {
-            .card { padding: 2rem 1rem; border-radius: 25px; }
-            .title { font-size: 1.9rem; }
-            .name { font-size: 2.2rem; }
-            .age { font-size: 1.7rem; }
-            .message { font-size: 0.95rem; }
-            .cake-icon { font-size: 2.5rem; }
-            .photo-frame { width: 120px; height: 120px; }
-            .balloon { width: 35px; height: 45px; }
-            .wish-btn { padding: 10px 18px; font-size: 0.85rem; }
-            .tap-overlay .gift-icon { font-size: 4rem; }
-            .tap-overlay h2 { font-size: 1.5rem; }
-            .tap-overlay p { font-size: 0.95rem; }
+            .welcome-title { font-size: 2.4rem; }
+            .welcome-name { font-size: 3rem; }
+            .welcome-icon { font-size: 4rem; }
+            .welcome-hint { font-size: 1rem; padding: 12px 25px; }
+            .card { padding: 1.5rem 1rem 2rem; border-radius: 25px; }
+            .title { font-size: 1.5rem; }
+            .name { font-size: 1.8rem; }
+            .age { font-size: 1.2rem; }
+            .photo-frame { width: 110px; height: 110px; }
+            .cake-icon { font-size: 2.2rem; }
+            .prayer-item .text { font-size: 0.85rem; }
+            .prayer-item .emoji { font-size: 1.2rem; }
+            .wish-btn { padding: 10px 22px; font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Overlay "tap to start" — ini trick utama biar lagu otomatis nyala -->
-    <div class="tap-overlay" id="tapOverlay">
-        <div class="gift-icon">🎁</div>
-        <h2>Kejutan Untuk Galinasari</h2>
-        <p>👆 Ketuk di mana saja untuk membuka 🎵</p>
-    </div>
-
+    <!-- Latar belakang -->
     <div class="stars"></div>
     <div class="twinkling"></div>
     <div class="confetti" id="confetti"></div>
     <div class="balloon-container" id="balloons"></div>
 
-    <!-- Audio dengan autoplay + preload -->
-    <audio id="laguUlangTahun" loop preload="auto" autoplay playsinline>
+    <!-- Audio -->
+    <audio id="laguUlangTahun" loop preload="auto" playsinline>
         <source src="lagu_ultah_india.mp3" type="audio/mpeg">
         <source src="https://raw.githubusercontent.com/rikanami/ultah/main/lagu_ultah_india.mp3" type="audio/mpeg">
-        Browser Anda tidak mendukung elemen audio.
     </audio>
 
-    <div class="card">
-        <div class="glow-ring"></div>
+    <!-- ================= HALAMAN PEMBUKA ================= -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-icon">🎁</div>
+        <div class="welcome-title">Selamat Ulang Tahun</div>
+        <div class="welcome-name">Galinasari</div>
+        <div class="welcome-hint" id="openBtn">✨ Klik untuk Membuka Kejutan ✨</div>
+    </div>
 
-        <div class="photo-frame">
-            <img src="galinasari.jpg" alt="Galinasari"
-                 onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/rikanami/ultah/main/galinasari.jpg';">
-        </div>
+    <!-- ================= HALAMAN DOA ================= -->
+    <div class="main-screen" id="mainScreen">
+        <div class="card">
+            <div class="photo-frame">
+                <img src="galinasari.jpg" alt="Galinasari"
+                     onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/rikanami/ultah/main/galinasari.jpg';">
+            </div>
 
-        <div class="cake-icon">🎂</div>
-        <div class="title">Selamat Ulang Tahun</div>
-        <div class="age">ke-25</div>
-        <div class="name">Galinasari</div>
+            <div class="cake-icon">🎂</div>
+            <div class="title">Selamat Ulang Tahun</div>
+            <div class="age">ke-25</div>
+            <div class="name">Galinasari</div>
 
-        <div class="divider">
-            <span class="line"></span>
-            <span class="heart">💖</span>
-            <span class="line"></span>
-        </div>
+            <div class="divider">
+                <span class="line"></span>
+                <span class="heart">💖</span>
+                <span class="line"></span>
+            </div>
 
-        <div class="message">
-            ✨ Semoga di usia yang ke-25 ini,<br>
-            setiap langkahmu dipenuhi kebahagiaan,<br>
-            kesehatan, dan kesuksesan yang tak terbatas.<br>
-            Terus bersinar seperti bintang, Galinasari! 🌟
-        </div>
+            <div class="prayers">
+                <div class="prayer-item">
+                    <div class="emoji">🌟</div>
+                    <div class="text">Semoga di usia ke-25 ini, setiap langkahmu dipenuhi kebahagiaan dan keberkahan yang tak terbatas.</div>
+                </div>
+                <div class="prayer-item">
+                    <div class="emoji">💪</div>
+                    <div class="text">Diberikan kesehatan yang prima, kekuatan, dan semangat untuk menggapai semua impianmu.</div>
+                </div>
+                <div class="prayer-item">
+                    <div class="emoji">💼</div>
+                    <div class="text">Karier yang cemerlang, rezeki yang melimpah, dan kesuksesan di setiap jalan yang kamu pilih.</div>
+                </div>
+                <div class="prayer-item">
+                    <div class="emoji">💖</div>
+                    <div class="text">Dikelilingi orang-orang baik yang tulus mencintai dan mendukungmu selalu.</div>
+                </div>
+                <div class="prayer-item">
+                    <div class="emoji">🌻</div>
+                    <div class="text">Hati yang tenang, pikiran yang jernih, dan kebahagiaan yang selalu menghiasi harimu.</div>
+                </div>
+                <div class="prayer-item">
+                    <div class="emoji">✨</div>
+                    <div class="text">Semoga menjadi pribadi yang semakin hebat, bijaksana, dan bersinar seperti bintang.</div>
+                </div>
+            </div>
 
-        <div class="button-group">
-            <button class="wish-btn music-btn" id="musicBtn">⏸️ Jeda Lagu</button>
+            <div class="closing">— Terus bersinar, Galinasari! 🌟 —</div>
+
             <button class="wish-btn" id="wishBtn">Kirim Doa 💌</button>
         </div>
     </div>
 
     <script>
-        // ============ CONFETTI ============
+        // ================= CONFETTI =================
         (function createConfetti() {
             const container = document.getElementById('confetti');
             const colors = ['#FFD700', '#FF69B4', '#FF4500', '#00CED1', '#9370DB', '#FFB347', '#FF1493', '#7FFF00', '#FF6347'];
@@ -492,7 +562,7 @@
             }
         })();
 
-        // ============ BALON ============
+        // ================= BALON =================
         (function createBalloons() {
             const container = document.getElementById('balloons');
             const colors = [
@@ -504,7 +574,7 @@
                 'radial-gradient(circle at 30% 30%, #d9b3ff, #994dff)',
                 'radial-gradient(circle at 30% 30%, #ffcc99, #ff9933)'
             ];
-            for (let i = 0; i < 12; i++) {
+            for (let i = 0; i < 14; i++) {
                 const b = document.createElement('div');
                 b.classList.add('balloon');
                 const sizeVar = Math.random() * 30 + 35;
@@ -515,96 +585,54 @@
                 b.style.background = colors[Math.floor(Math.random() * colors.length)];
                 b.style.animationDuration = (Math.random() * 6 + 6) + 's';
                 b.style.animationDelay = (Math.random() * 5) + 's';
-                b.style.opacity = Math.random() * 0.4 + 0.4;
+                b.style.opacity = Math.random() * 0.4 + 0.5;
                 container.appendChild(b);
             }
         })();
 
-        // ============ AUTOPLAY MUSIK (MULTI-LAYER) ============
+        // ================= LOGIKA UTAMA =================
         const lagu = document.getElementById('laguUlangTahun');
-        const musicBtn = document.getElementById('musicBtn');
-        const tapOverlay = document.getElementById('tapOverlay');
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const mainScreen = document.getElementById('mainScreen');
+        const openBtn = document.getElementById('openBtn');
 
-        lagu.volume = 0.7;
+        lagu.volume = 0.8;
 
-        // Fungsi putar lagu
-        function putarLagu() {
-            const playPromise = lagu.play();
-            if (playPromise !== undefined) {
-                playPromise.then(() => {
-                    musicBtn.textContent = '⏸️ Jeda Lagu';
-                }).catch(err => {
-                    console.log('Autoplay diblokir:', err);
-                    musicBtn.textContent = '🎵 Putar Lagu';
-                });
-            }
+        function bukaKejutan() {
+            // 1. Putar lagu
+            lagu.play().catch(err => console.log('Gagal putar lagu:', err));
+
+            // 2. Sembunyikan halaman pembuka dengan animasi
+            welcomeScreen.classList.add('hide');
+
+            // 3. Tampilkan halaman doa (dengan sedikit delay agar transisi halus)
+            setTimeout(() => {
+                mainScreen.classList.add('show');
+            }, 400);
         }
 
-        // LAYER 1: Coba autoplay langsung saat load
-        window.addEventListener('load', function() {
-            putarLagu();
-        });
+        // Klik di mana saja pada halaman pembuka
+        welcomeScreen.addEventListener('click', bukaKejutan);
 
-        // LAYER 2: Coba autoplay begitu user menyentuh/klik di mana saja
-        // Sekaligus tutup overlay "tap to start"
-        function startEverything() {
-            putarLagu();
-            tapOverlay.classList.add('hidden');
-            // Lepas semua event listener setelah dipicu
-            document.removeEventListener('click', startEverything);
-            document.removeEventListener('touchstart', startEverything);
-            document.removeEventListener('keydown', startEverything);
-            document.removeEventListener('scroll', startEverything);
-            document.removeEventListener('mousemove', startEverything);
-        }
-
-        document.addEventListener('click', startEverything);
-        document.addEventListener('touchstart', startEverything);
-        document.addEventListener('keydown', startEverything);
-        document.addEventListener('scroll', startEverything);
-        document.addEventListener('mousemove', startEverything);
-
-        // LAYER 3: Fallback — kalau setelah 1 detik masih belum play, tampilkan overlay hint
-        setTimeout(() => {
-            if (lagu.paused) {
-                musicBtn.textContent = '🎵 Putar Lagu';
-                // Overlay tetap ada, biar user tahu harus tap
-            } else {
-                tapOverlay.classList.add('hidden');
-            }
-        }, 1500);
-
-        // Toggle musik via tombol
-        musicBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            if (lagu.paused) {
-                lagu.play();
-                musicBtn.textContent = '⏸️ Jeda Lagu';
-            } else {
-                lagu.pause();
-                musicBtn.textContent = '🎵 Putar Lagu';
-            }
-        });
-
-        // ============ TOMBOL KIRIM DOA ============
+        // ================= TOMBOL KIRIM DOA =================
         const wishBtn = document.getElementById('wishBtn');
         wishBtn.addEventListener('click', function(e) {
             e.stopPropagation();
             const colors = ['#FFD700', '#FF69B4', '#FF4500', '#00CED1', '#9370DB', '#FF1493'];
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 40; i++) {
                 const heart = document.createElement('div');
                 heart.innerHTML = '❤️';
                 heart.style.position = 'fixed';
                 heart.style.left = Math.random() * 100 + 'vw';
                 heart.style.top = Math.random() * 100 + 'vh';
-                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.fontSize = (Math.random() * 25 + 15) + 'px';
                 heart.style.pointerEvents = 'none';
                 heart.style.zIndex = '9999';
-                heart.style.animation = `fall ${Math.random() * 2 + 2}s linear forwards`;
+                heart.style.animation = `fall ${Math.random() * 2 + 2.5}s linear forwards`;
                 heart.style.opacity = '1';
                 heart.style.filter = `drop-shadow(0 0 10px ${colors[Math.floor(Math.random() * colors.length)]})`;
                 document.body.appendChild(heart);
-                setTimeout(() => heart.remove(), 4000);
+                setTimeout(() => heart.remove(), 5000);
             }
 
             wishBtn.textContent = 'Doa Terkirim! 🎉';
@@ -612,17 +640,6 @@
             setTimeout(() => {
                 wishBtn.textContent = 'Terima Kasih Galinasari! 💖';
             }, 2000);
-        });
-
-        // Fallback untuk gambar: kalau path lokal gagal, pakai URL raw GitHub
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('error', function() {
-                if (!this.dataset.fallbackApplied) {
-                    this.dataset.fallbackApplied = 'true';
-                    const filename = this.getAttribute('src').split('/').pop();
-                    this.src = 'https://raw.githubusercontent.com/rikanami/ultah/main/' + filename;
-                }
-            });
         });
     </script>
 </body>
