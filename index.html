@@ -41,7 +41,6 @@
             100% { filter: hue-rotate(15deg); }
         }
 
-        /* Grain texture halus */
         .grain {
             position: absolute;
             inset: 0;
@@ -51,7 +50,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' /%3E%3C/svg%3E");
         }
 
-        /* Partikel lembut warna-warni */
         .particles-container {
             position: absolute;
             inset: 0;
@@ -102,7 +100,6 @@
             pointer-events: none;
         }
 
-        /* Badge kecil */
         .badge {
             display: inline-block;
             padding: 8px 20px;
@@ -124,7 +121,6 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
-        /* Nama Galinasari */
         .welcome-name {
             font-family: 'DM Serif Display', serif;
             font-size: clamp(3.5rem, 11vw, 7rem);
@@ -150,7 +146,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Subtitle */
         .welcome-subtitle {
             font-family: 'Caveat', cursive;
             font-size: clamp(1.4rem, 3.5vw, 2rem);
@@ -162,7 +157,6 @@
             text-shadow: 0 0 20px rgba(255, 203, 142, 0.4);
         }
 
-        /* Tombol buka */
         .open-hint {
             margin-top: 3rem;
             font-family: 'Poppins', sans-serif;
@@ -262,7 +256,6 @@
         .card::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
         .card::-webkit-scrollbar-thumb { background: rgba(255, 154, 139, 0.4); border-radius: 3px; }
 
-        /* Sticker top */
         .sticker-top {
             display: inline-block;
             font-size: 2.2rem;
@@ -276,7 +269,6 @@
             50% { transform: translateY(-8px) rotate(5deg); }
         }
 
-        /* Foto polaroid */
         .polaroid-wrap {
             position: relative;
             display: inline-block;
@@ -301,7 +293,6 @@
             100% { opacity: 1; transform: rotate(-3deg) scale(1); }
         }
 
-        /* Washi tape */
         .polaroid-wrap::before {
             content: '';
             position: absolute;
@@ -343,7 +334,6 @@
             font-weight: 600;
         }
 
-        /* Judul */
         .card-eyebrow {
             display: inline-block;
             font-family: 'Poppins', sans-serif;
@@ -376,7 +366,6 @@
             font-weight: 500;
         }
 
-        /* Pesan pembuka */
         .opening-message {
             font-family: 'Poppins', sans-serif;
             font-size: 0.98rem;
@@ -387,7 +376,6 @@
             padding: 0 0.5rem;
         }
 
-        /* Doa-doa */
         .prayers {
             text-align: left;
             margin-bottom: 2rem;
@@ -435,7 +423,6 @@
             font-weight: 300;
         }
 
-        /* Penutup */
         .closing-message {
             font-family: 'Caveat', cursive;
             font-size: 1.5rem;
@@ -449,7 +436,6 @@
             animation: prayerFadeIn 0.9s ease forwards 2.15s;
         }
 
-        /* Tombol */
         .wish-btn {
             font-family: 'Poppins', sans-serif;
             font-size: 0.85rem;
@@ -486,7 +472,6 @@
             transform: none;
         }
 
-        /* Signature */
         .signature {
             margin-top: 1.5rem;
             font-family: 'Caveat', cursive;
@@ -496,7 +481,6 @@
             animation: prayerFadeIn 1s ease forwards 2.55s;
         }
 
-        /* Responsif */
         @media (max-width: 600px) {
             .welcome-name { font-size: clamp(2.8rem, 14vw, 5rem); }
             .welcome-subtitle { font-size: 1.2rem; }
@@ -537,15 +521,15 @@
             <div class="polaroid-wrap">
                 <img src="galinasari.jpg" alt="Galinasari"
                      onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/rikanami/ultah/main/galinasari.jpg';">
-                <div class="polaroid-caption">si paling ke-25 ✨</div>
+                <div class="polaroid-caption">si paling ke-24 ✨</div>
             </div>
 
             <div class="card-eyebrow">Happy Birthday</div>
             <div class="card-name">Galinasari</div>
-            <div class="card-age">~ 25 tahun, mantap! ~</div>
+            <div class="card-age">~ 24 tahun, mantap! ~</div>
 
             <div class="opening-message">
-                Selamat ulang tahun, Gal! Nggak kerasa ya, sekarang kamu udah 25.
+                Selamat ulang tahun, Gal! Nggak kerasa ya, sekarang kamu udah 24.
                 Semoga tahun ini jadi tahun yang paling seru, paling tenang,
                 dan paling membahagiakan buat kamu.
             </div>
@@ -649,7 +633,6 @@
         wishBtn.addEventListener('click', function(e) {
             e.stopPropagation();
 
-            // Confetti warna-warni lembut
             const colors = ['#ff9a8b', '#ffcb8e', '#c8aaff', '#ffb4c8', '#fff3b0'];
             for (let i = 0; i < 40; i++) {
                 const conf = document.createElement('div');
