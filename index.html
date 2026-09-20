@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untuk Galinasari</title>
+    <title>Happy Birthday, Galinasari!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
@@ -34,7 +34,6 @@
             z-index: 1;
         }
 
-        /* Bintang halus */
         .stars {
             position: absolute;
             inset: 0;
@@ -58,7 +57,6 @@
             100% { opacity: 1; }
         }
 
-        /* Bokeh lembut mengapung */
         .bokeh-container {
             position: absolute;
             inset: 0;
@@ -105,7 +103,6 @@
             pointer-events: none;
         }
 
-        /* Ornamen garis tipis */
         .ornament {
             width: 80px;
             height: 1px;
@@ -119,7 +116,6 @@
             to { opacity: 1; }
         }
 
-        /* Teks kecil di atas */
         .eyebrow {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.75rem;
@@ -136,7 +132,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Nama Galinasari — script elegan */
         .welcome-name {
             font-family: 'Great Vibes', cursive;
             font-size: clamp(4rem, 12vw, 8rem);
@@ -163,7 +158,6 @@
             }
         }
 
-        /* Subtitle */
         .welcome-subtitle {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
@@ -176,7 +170,6 @@
             animation: fadeInUp 1.3s ease 1s forwards;
         }
 
-        /* Tombol buka */
         .open-hint {
             margin-top: 3rem;
             font-family: 'Montserrat', sans-serif;
@@ -259,7 +252,6 @@
         .card::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
         .card::-webkit-scrollbar-thumb { background: rgba(201, 169, 106, 0.4); border-radius: 2px; }
 
-        /* Ornamen atas */
         .top-ornament {
             display: flex;
             align-items: center;
@@ -286,7 +278,6 @@
             box-shadow: 0 0 10px rgba(201, 169, 106, 0.8);
         }
 
-        /* Foto */
         .photo-wrap {
             width: 140px;
             height: 140px;
@@ -329,7 +320,6 @@
             z-index: 2;
         }
 
-        /* Judul */
         .card-eyebrow {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.7rem;
@@ -358,10 +348,9 @@
             margin-bottom: 1.8rem;
         }
 
-        /* Pesan pembuka */
         .opening-message {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             line-height: 1.8;
             color: #d8cebd;
             font-weight: 400;
@@ -412,16 +401,15 @@
 
         .prayer-text {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             line-height: 1.7;
             color: #d8cebd;
             font-weight: 400;
         }
 
-        /* Penutup */
         .closing-message {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-style: italic;
             color: #c9a96a;
             line-height: 1.7;
@@ -432,7 +420,6 @@
             animation: prayerFadeIn 0.9s ease forwards 2.3s;
         }
 
-        /* Tombol */
         .wish-btn {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.75rem;
@@ -467,17 +454,17 @@
             transform: none;
         }
 
-        /* Signature di bawah */
         .signature {
             margin-top: 2rem;
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 0.95rem;
             color: #8a7a62;
+            letter-spacing: 1px;
             opacity: 0;
             animation: prayerFadeIn 1s ease forwards 2.8s;
         }
 
-        /* Responsif */
         @media (max-width: 600px) {
             .welcome-name { font-size: clamp(3rem, 16vw, 5rem); }
             .welcome-subtitle { font-size: 1rem; }
@@ -485,20 +472,18 @@
             .card { padding: 2rem 1.5rem; }
             .card-name { font-size: 2.8rem; }
             .photo-wrap { width: 110px; height: 110px; }
-            .prayer-text { font-size: 0.95rem; }
-            .opening-message { font-size: 0.95rem; }
-            .closing-message { font-size: 1rem; }
+            .prayer-text { font-size: 0.98rem; }
+            .opening-message { font-size: 1rem; }
+            .closing-message { font-size: 1.02rem; }
             .wish-btn { font-size: 0.7rem; padding: 12px 30px; letter-spacing: 3px; }
         }
     </style>
 </head>
 <body>
-    <!-- Latar belakang -->
     <div class="bg-gradient"></div>
     <div class="stars"></div>
     <div class="bokeh-container" id="bokehContainer"></div>
 
-    <!-- Audio -->
     <audio id="laguUlangTahun" loop preload="auto" playsinline>
         <source src="lagu_ultah_india.mp3" type="audio/mpeg">
         <source src="https://raw.githubusercontent.com/rikanami/ultah/main/lagu_ultah_india.mp3" type="audio/mpeg">
@@ -506,11 +491,11 @@
 
     <!-- ================= HALAMAN PEMBUKA ================= -->
     <div class="welcome-screen" id="welcomeScreen">
-        <div class="eyebrow">A Letter For You</div>
+        <div class="eyebrow">Happy Birthday</div>
         <div class="ornament"></div>
         <div class="welcome-name">Galinasari</div>
-        <div class="welcome-subtitle">Untuk seseorang yang istimewa</div>
-        <div class="open-hint" id="openBtn">Buka Surat</div>
+        <div class="welcome-subtitle">Ayo, ada sedikit ucapan buat kamu</div>
+        <div class="open-hint" id="openBtn">Buka Ucapan</div>
     </div>
 
     <!-- ================= HALAMAN UTAMA ================= -->
@@ -527,61 +512,63 @@
                      onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/rikanami/ultah/main/galinasari.jpg';">
             </div>
 
-            <div class="card-eyebrow">Happy 25th Birthday</div>
+            <div class="card-eyebrow">25th Birthday</div>
             <div class="card-name">Galinasari</div>
-            <div class="card-age">— dua puluh lima tahun —</div>
+            <div class="card-age">— happy level 25 unlocked —</div>
 
             <div class="opening-message">
-                Ada banyak hal yang ingin kusampaikan di hari ini.
-                Tapi mungkin, biarkan doa-doa ini yang berbicara lebih dulu.
+                Selamat ulang tahun, Gal! Nggak kerasa ya, sekarang kamu udah 25.
+                Semoga tahun ini jadi tahun yang paling seru, paling tenang,
+                dan paling membahagiakan buat kamu.
             </div>
 
             <div class="prayers">
                 <div class="prayer-item">
-                    <div class="prayer-number">i.</div>
+                    <div class="prayer-number">01.</div>
                     <div class="prayer-text">
-                        Semoga hari-harimu ke depan lebih ringan dari yang lalu.
-                        Setiap lelah yang kamu rasakan, semoga berbuah jadi sesuatu yang kamu syukuri.
+                        Semoga rezekinya makin lancar, makin banyak, dan makin gampang didapat.
+                        Pokoknya dompet dan hati sama-sama penuh deh.
                     </div>
                 </div>
                 <div class="prayer-item">
-                    <div class="prayer-number">ii.</div>
+                    <div class="prayer-number">02.</div>
                     <div class="prayer-text">
-                        Semoga kamu selalu dikelilingi orang-orang yang tulus—
-                        yang tidak hanya ada saat senang, tapi juga memilih tinggal saat sulit.
+                        Semoga yang bikin capek, bikin pusing, dan bikin overthinking
+                        pelan-pelan pergi. Ganti jadi hari-hari yang lebih santai dan menyenangkan.
                     </div>
                 </div>
                 <div class="prayer-item">
-                    <div class="prayer-number">iii.</div>
+                    <div class="prayer-number">03.</div>
                     <div class="prayer-text">
-                        Untuk mimpi-mimpi yang masih kamu kejar:
-                        semoga satu per satu menemukan jalannya. Pelan tidak apa-apa, yang penting tidak berhenti.
+                        Semoga kamu selalu dikelilingi orang-orang yang beneran tulus.
+                        Yang bisa diajak ketawa sampai sakit perut, dan juga yang mau dengerin
+                        kalau kamu lagi capek.
                     </div>
                 </div>
                 <div class="prayer-item">
-                    <div class="prayer-number">iv.</div>
+                    <div class="prayer-number">04.</div>
                     <div class="prayer-text">
-                        Semoga kamu belajar mencintai dirimu sendiri dengan cara yang paling jujur—
-                        menerima kurangnya, merayakan lebihnya.
+                        Semoga setiap mimpi dan target yang kamu tulis di notes HP itu
+                        satu-satu bisa dicoret karena udah tercapai. Pelan boleh, yang penting jalan terus.
                     </div>
                 </div>
                 <div class="prayer-item">
-                    <div class="prayer-number">v.</div>
+                    <div class="prayer-number">05.</div>
                     <div class="prayer-text">
-                        Dan semoga, apa pun yang sedang kamu doakan diam-diam,
-                        semesta mendengarnya dan mengabulkannya di waktu yang tepat.
+                        Dan yang paling penting: semoga kamu selalu sehat, bahagia,
+                        dan jangan lupa sayang sama diri sendiri. Karena kamu berharga banget.
                     </div>
                 </div>
             </div>
 
             <div class="closing-message">
-                Selamat ulang tahun, Galinasari.<br>
-                Terima kasih sudah bertahan sejauh ini.
+                Sekali lagi, selamat ulang tahun, Gal!<br>
+                Terima kasih sudah jadi kamu.
             </div>
 
             <button class="wish-btn" id="wishBtn">Kirim Doa</button>
 
-            <div class="signature">— dengan tulus —</div>
+            <div class="signature">— dari kami yang sayang kamu —</div>
         </div>
     </div>
 
@@ -609,30 +596,23 @@
         const welcomeScreen = document.getElementById('welcomeScreen');
         const mainScreen = document.getElementById('mainScreen');
 
-        // Set volume lebih lembut untuk suasana intimate
         lagu.volume = 0.55;
 
-        function bukaSurat() {
-            // Putar lagu
+        function bukaUcapan() {
             lagu.play().catch(err => console.log('Autoplay ditolak browser:', err));
-
-            // Sembunyikan halaman pembuka
             welcomeScreen.classList.add('hide');
-
-            // Tampilkan halaman utama
             setTimeout(() => {
                 mainScreen.classList.add('show');
             }, 500);
         }
 
-        welcomeScreen.addEventListener('click', bukaSurat);
+        welcomeScreen.addEventListener('click', bukaUcapan);
 
         // ================= TOMBOL KIRIM DOA =================
         const wishBtn = document.getElementById('wishBtn');
         wishBtn.addEventListener('click', function(e) {
             e.stopPropagation();
 
-            // Efek kelopak/partikel emas lembut naik ke atas
             for (let i = 0; i < 25; i++) {
                 const particle = document.createElement('div');
                 particle.style.position = 'fixed';
@@ -650,7 +630,6 @@
                 particle.style.opacity = '0.9';
                 document.body.appendChild(particle);
 
-                // Trigger animasi
                 requestAnimationFrame(() => {
                     particle.style.transform = `translateY(-${window.innerHeight + 100}px) translateX(${(Math.random() - 0.5) * 100}px)`;
                     particle.style.opacity = '0';
